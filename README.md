@@ -3,16 +3,16 @@ Bash script to allow standardized semi-custom Kickstart files.
 
 Input files are in ~/input, and the output files are in ~/output as you might imagine.  :)
 
+```shell
+    Usage: ./ks_writer.sh [-o OUTFILE] [-s SUFFIX] [-r RELEASE]
 
-  Usage: ./ks_writer.sh [-o OUTFILE] [-s SUFFIX] [-r RELEASE]
+    -o            # Output file name
 
-  -o            # Output file name
+    -h            # This help note
 
-  -h            # This help note
+    -s SUFFIX     # Will look for files with that suffix
 
-  -s SUFFIX     # Will look for files with that suffix
-
-  -r RELEASE    # Will look for files with that relase number
+    -r RELEASE    # Will look for files with that relase number
 
     ./ks_writer.sh will reference a file named 'default' for default settings.
     Command line arguments supercede the defaults.
@@ -22,3 +22,4 @@ Input files are in ~/input, and the output files are in ~/output as you might im
 
     Will source the default file, override 6 to '6', 
     local to 'webserver', and write to file 'www.ks.cfg'.
+```
