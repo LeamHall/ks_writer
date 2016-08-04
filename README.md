@@ -4,10 +4,14 @@ Bash script to allow standardized semi-custom Kickstart files.
 Input files are in ~/input, and the output files are in ~/output as you might imagine.  :)
 
 
-Usage: ./ks_writer.sh [-o OUTFILE] [-s SUFFIX] [-r RELEASE]
+  Usage: ./ks_writer.sh [-o OUTFILE] [-s SUFFIX] [-r RELEASE]
+
   -o            # Output file name
+
   -h            # This help note
+
   -s SUFFIX     # Will look for files with that suffix
+
   -r RELEASE    # Will look for files with that relase number
 
     ./ks_writer.sh will reference a file named 'default' for default settings.
