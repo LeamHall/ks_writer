@@ -1,0 +1,10 @@
+## Services
+
+rootpw temp
+firewall --service=ssh
+authconfig --enableshadow --passalgo=sha512
+selinux --permissive
+timezone --utc America/New_York
+# "sdb" is a localism. Most places will use sda.
+bootloader --location=mbr --driveorder=sdb --append="crashkernel=auto rhgb quiet"
+

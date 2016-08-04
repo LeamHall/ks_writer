@@ -1,0 +1,23 @@
+## Packages
+
+%packages --nobase --ignoremissing
+@core
+openssh-clients
+# V-22506
+# V-38447
+# V-38462
+rpm
+yum
+
+# Needed to make psalms a KVM host
+qemu-kvm
+python-virtinst
+virt-top
+libvirt
+libvirt-client
+
+# V-22589
+-yum-updateonboot
+
+%end
+

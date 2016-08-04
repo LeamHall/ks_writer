@@ -1,0 +1,11 @@
+## Packages
+
+%packages --nobase --ignoremissing
+@core
+openssh-clients
+rpm
+yum
+-yum-updateonboot
+
+%end
+

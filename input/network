@@ -1,0 +1,7 @@
+## Network
+
+network --onboot no --device eth0 --bootproto dhcp --noipv6
+#network --onboot no --device eth1 --bootproto dhcp --noipv6
+#network --onboot no --device eth2 --bootproto dhcp --noipv6
+#network --onboot no --device eth3 --bootproto dhcp --noipv6
+
