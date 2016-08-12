@@ -2,10 +2,20 @@
 
 %packages --nobase --ignoremissing
 @core
+# Needed to ssh and scp in. 
 openssh-clients
+# Needed to keep the server updated.
 rpm
 yum
--yum-updateonboot
+# A lot of code is bundled in *.zip files.
+unzip
+# Provides the 'locate' program.
+mlocate
 
+-yum-updateonboot
+# VID 38589
+-telnet-server
+# VID 38591
+-rsh-server
 %end
 
