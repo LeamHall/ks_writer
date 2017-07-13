@@ -1,0 +1,19 @@
+# Partitions
+
+# "sdb" is a localism, most places will use sda.
+clearpart --all --drives=sdb
+zerombr
+
+bootloader --location=mbr --driveorder=sdb --append="crashkernel=auto rhgb quiet"
+
+part /boot --fstype=ext4 --size=2000
+part pv.001 --grow --size=1
+volgroup VolGroupSys --pesize=4096 pv.001
+logvol / --fstype=ext4 --name=lv_root --vgname=VolGroupSys --size=8192
+logvol /home --fstype=ext4 --name=lv_home --vgname=VolGroupSys --size=4096
+logvol /var --fstype=ext4 --name=lv_var --vgname=VolGroupSys --size=4096
+logvol /var/log --fstype=ext4 --name=lv_var_log --vgname=VolGroupSys --size=4096
+logvol /var/log/audit --fstype=ext4 --name=lv_var_log_audit --vgname=VolGroupSys --size=4096
+logvol /tmp --fstype=ext4 --name=lv_tmp --vgname=VolGroupSys --size=8192
+logvol swap --name=lv_swap --vgname=VolGroupSys --size=8192
+
