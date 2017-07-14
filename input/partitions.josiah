@@ -1,7 +1,7 @@
 # Partitions
 
 # "sdb" is a localism, most places will use sda.
-clearpart --initlabel --all --drives=sdb,sdc
+clearpart --initlabel --all --drives=sdb,sdc,sdd
 zerombr
 
 bootloader --location=mbr --driveorder=sdb --append="crashkernel=auto rhgb quiet"
@@ -23,5 +23,5 @@ logvol /opt --name=lv_opt --vgname=vg_opt --size=1 --grow
 
 part pv.03 --grow --size=1 --ondrive=sdd
 volgroup vg_storage pv.03
-logvol /opt/storage --name=lv_storage --vgnamevg_storage --size=1 --grow
+logvol /opt/storage --name=lv_storage --vgname=vg_storage --size=1 --grow
 
