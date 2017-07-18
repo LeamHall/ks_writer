@@ -41,7 +41,7 @@ do
        ;;
     o)
        FILE=`basename ${OPTARG}`
-       OUTFILE="${OUTPUTDIR}/${OPTARG}"
+       OUTFILE="${OUTPUTDIR}/${FILE}"
        ;;
     h)
        echo "$HELP"
