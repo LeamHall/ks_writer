@@ -1,0 +1,21 @@
+127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+
+192.168.1.50	josiah
+192.168.1.55  	shaphan
+192.168.1.61	leitz
+
+192.168.1.75  	genesis
+192.168.1.76  	exodus
+192.168.1.77  	leviticus
+192.168.1.78	numbers
+192.168.1.79	deut
+
+192.168.1.90	matthew
+192.168.1.91	mark
+192.168.1.92	luke
+192.168.1.93	john
+
+192.168.1.200	psalms
+192.168.1.201	proverbs
+
