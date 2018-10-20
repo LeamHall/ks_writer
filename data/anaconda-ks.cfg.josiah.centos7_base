@@ -1,0 +1,58 @@
+#version=DEVEL
+# System authorization information
+auth --enableshadow --passalgo=sha512
+# Use CDROM installation media
+cdrom
+# Use graphical install
+graphical
+# Run the Setup Agent on first boot
+firstboot --enable
+ignoredisk --only-use=sda
+# Keyboard layouts
+keyboard --vckeymap=us --xlayouts='us'
+# System language
+lang en_US.UTF-8
+
+# Network information
+network  --bootproto=static --device=em1 --gateway=192.168.1.1 --ip=192.168.1.50 --nameserver=8.8.8.8 --netmask=255.255.255.0 --noipv6 --no-activate
+network  --hostname=josiah
+
+# Root password
+rootpw --iscrypted $6$UUIUIUIUIUIUIUIIUIUI
+# System services
+services --enabled="chronyd"
+# System timezone
+timezone America/New_York --isUtc
+user --groups=wheel --name=leam --password=$6$(*(*(*(*(*(*(*
+# System bootloader configuration
+bootloader --append=" crashkernel=auto" --location=mbr --boot-drive=sda
+# Partition clearing information
+clearpart --all --initlabel --drives=sda
+# Disk partitioning information
+part pv.1404 --fstype="lvmpv" --ondisk=sda --size=20484
+part /boot --fstype="xfs" --ondisk=sda --size=5120
+part pv.1088 --fstype="lvmpv" --ondisk=sda --size=90120
+volgroup home --pesize=4096 pv.1404
+volgroup root --pesize=4096 pv.1088
+logvol /  --fstype="xfs" --size=51200 --name=root --vgname=root
+logvol /opt  --fstype="xfs" --size=30720 --name=opt --vgname=root
+logvol swap  --fstype="swap" --size=8192 --name=swap --vgname=root
+logvol /home  --fstype="xfs" --size=20480 --name=home --vgname=home
+
+%packages
+@^minimal
+@core
+chrony
+kexec-tools
+
+%end
+
+%addon com_redhat_kdump --enable --reserve-mb='auto'
+
+%end
+
+%anaconda
+pwpolicy root --minlen=6 --minquality=1 --notstrict --nochanges --notempty
+pwpolicy user --minlen=6 --minquality=1 --notstrict --nochanges --emptyok
+pwpolicy luks --minlen=6 --minquality=1 --notstrict --nochanges --notempty
+%end
