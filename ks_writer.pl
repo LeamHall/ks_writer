@@ -64,7 +64,9 @@ while (<CONFIG>) {
   print $install;
   $ip = $network . '.' . $host_ip;
   $gw = $network . '.' . $gateway;
-  $network_string =~ s/(.*)GATEWAY(.*)IP(.*)HOSTNAME(.*)/$1$gw $2$ip $3$hostname $4/;
+  $network_string =~ s/GATEWAY/$gw/;
+  $network_string =~ s/IP/$ip/;
+  $network_string =~ s/HOSTNAME/$hostname/;
   print $network_string;
   print $services;
   print $partitions;
