@@ -2,6 +2,12 @@
 #
 # write_kickstart.pl
 #
+# Usage:
+#   ./ks_writer.pl -c data/ks_data.csv
+#
+# Notes: 
+#   Edit the files in input/ to suit your environment.
+
 use strict;
 use warnings;
 use 5.008_004;
@@ -9,7 +15,6 @@ use Getopt::Long;
 
 my $version = '7';
 my $config;
-my $output;
 my $network;
 my $host_ip;
 my $gateway;
@@ -29,7 +34,7 @@ while (<CONFIG>) {
   next if ( $_ =~ m/\#/);
   chomp;
   my ($version, $network, $host_ip, $gateway, $hostname) = split(':'); 
-
+  
   open INSTALL,  '<', "$input_dir/install_$version" or die $!;
   my $install  = do { local $/; <INSTALL>};
   close INSTALL;
@@ -42,17 +47,31 @@ while (<CONFIG>) {
   open NETWORK,      '<', "$input_dir/network_$version" or die $!;
   my $network_string = do { local $/; <NETWORK> };
   close NETWORK;
-
+  open PACKAGES,      '<', "$input_dir/packages_$version" or die $!;
+  my $packages = do { local $/; <PACKAGES> };
+  close PACKAGES;
+  open PRE,      '<', "$input_dir/pre_$version" or die $!;
+  my $pre = do { local $/; <PRE> };
+  close PRE;
+  open POST,      '<', "$input_dir/post_$version" or die $!;
+  my $post = do { local $/; <POST> };
+  close POST;
+  
   $ks_file = $hostname . "_ks.cfg"; 
   open OUTPUT, '>', "$output_dir/$ks_file" or die $!;
   select OUTPUT;
+
   print $install;
   $ip = $network . '.' . $host_ip;
   $gw = $network . '.' . $gateway;
-  $network_string =~ s/(.*)IP(.*)GATEWAY(.*)HOSTNAME(.*)/$1 $ip $2 $gw $3 $hostname $4/;
+  $network_string =~ s/(.*)GATEWAY(.*)IP(.*)HOSTNAME(.*)/$1$gw $2$ip $3$hostname $4/;
   print $network_string;
   print $services;
   print $partitions;
+  print $packages;
+  print $pre;
+  print $post;
+
   close OUTPUT;
 }
 close CONFIG;
