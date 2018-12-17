@@ -1,0 +1,5 @@
+#Network:host_ip:gateway:hostname
+192.168.1:20:1:alpha
+192.168.1:21:1:beta
+192.168.1:22:1:gamma
+192.168.1:23:1:delta
