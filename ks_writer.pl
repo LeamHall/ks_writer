@@ -28,7 +28,7 @@ open CONFIG,  '<', "$config" or die $!;
 while (<CONFIG>) {
   next if ( $_ =~ m/\#/);
   chomp;
-  ($version, $network, $host_ip, $gateway, $hostname) = split(':'); 
+  my ($version, $network, $host_ip, $gateway, $hostname) = split(':'); 
 
   open INSTALL,  '<', "$input_dir/install_$version" or die $!;
   my $install  = do { local $/; <INSTALL>};
