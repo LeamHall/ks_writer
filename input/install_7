@@ -1,0 +1,22 @@
+#version=DEVEL
+# System authorization information
+auth --enableshadow --passalgo=sha512
+
+url --url=http://192.168.1.200/repo/centos/7/Server/
+
+# Use text install
+text
+
+# Reboot after install, disengage USB media.
+reboot --eject
+
+# Do not run the Setup Agent on first boot.
+# Agree to the eula.
+firstboot --disable
+eula --agreed
+
+# Keyboard layouts
+keyboard --vckeymap=us --xlayouts='us'
+
+# System language
+lang en_US.UTF-8

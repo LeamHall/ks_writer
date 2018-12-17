@@ -1,0 +1,10 @@
+# Packages
+%packages
+@base
+@core
+chrony
+openssh-server
+kexec-tools
+wget
+
+%end

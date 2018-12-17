@@ -1,0 +1,6 @@
+# Partition clearing information
+# "sdb" is used when booting from a USB device.
+# "vda" is used for virtual disks.
+ignoredisk --only-use=sdb
+clearpart --all --drives=sdb --initlabel
+autopart --type=lvm

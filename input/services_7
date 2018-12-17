@@ -1,0 +1,16 @@
+# services_7
+# Root password
+rootpw  --iscrypted $6$XweJyB1g$RHM7dwKPNfcd21tAy2TvXI.EDF/gh75/LNkhLFcxGEteFKg7r7ams7N/hxWlXEERzvH5jXt4gdiuSUBPDflxX/
+
+# System services
+services --enabled="chronyd,sshd"
+firewall --disabled
+
+# System user
+user --groups=wheel --name=ansible --password=$6$7swkaSIV$5HGmYEz69H.Z8/JD0kM9iGNOe0AICId03jQvbemuyXNVxsgpBXxImp25ol7xYQKkCN3oWO8gsMqGjk7YxT3LW/ --iscrypted --uid=700 --shell=/bin/bash 
+
+# System timezone
+timezone America/New_York --isUtc
+
+# System bootloader configuration
+bootloader --append=" crashkernel=auto" --location=mbr --boot-drive=sdb
