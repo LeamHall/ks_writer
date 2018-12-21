@@ -1,10 +1,5 @@
-# LibreOffice lock files.
-.~lock.*
-
 # Active vi sessions.
 *.swp
 *.swo
 
-# Recent rspec failures
-spec/examples.txt
-
+/output/*
