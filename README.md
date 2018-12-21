@@ -1,25 +1,25 @@
 # ks_writer
-Bash script to allow standardized semi-custom Kickstart files.
+Perl script to allow standardized semi-custom Kickstart files.
 
-Input files are in ~/input, and the output files are in ~/output as you might imagine.  :)
+Input files are in ~/input, output files are in ~/output.  :)
 
 ```shell
-    Usage: ./ks_writer.sh [-o OUTFILE] [-s SUFFIX] [-r RELEASE]
+    Usage: ./ks_writer.pl --config data/ks_data.csv
 
-    -o            # Output file name
+    -c/--config <CONFIG FILE>    
 
-    -h            # This help note
-
-    -s SUFFIX     # Will look for files with that suffix
-
-    -r RELEASE    # Will look for files with that relase number
-
-    ./ks_writer.sh will reference a file named 'default' for default settings.
-    Command line arguments supercede the defaults.
-
-    Sample usage:
-    ./ks_writer.sh -r 6 -s webserver -o www.ks.cfg 
-
-    Will source the default file, override 6 to '6', 
-    local to 'webserver', and write to file 'www.ks.cfg'.
 ```
+
+# kvm_writer
+Perl script to generate standardized semi-custom KVM creation scripts.
+
+Input file is input/setup_new_virtual.sh. Edit it to your needs, keeping
+the UPPERCASE words as is.
+
+```shell
+  Usage: ./kvm_writer.pl --config data/ks_data.csv
+
+    -c/--config <CONFIG FILE>    
+
+```
+
