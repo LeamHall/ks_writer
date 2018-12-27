@@ -1,0 +1,31 @@
+How to use Kickstart
+====================
+
+For RHEL/CentOS 6
+----------------- 
+
+  ks=https://192.168.1.50/ks/node_ks.cfg noverifyssl ip=192.168.1.50 netmask=255.255.255.0 gateway=192.168.1.1 ksdevice=eth0
+
+
+If the webservice on the Kickstart server is using SSL:
+  Add "s" to "http" and add "noverifyssl" to the options.
+
+  ks=https://192.168.1.50/ks/node_ks.cfg noverifyssl ip=192.168.1.50 netmask=255.255.255.0 gateway=192.168.1.1 ksdevice=eth0
+
+
+For RHEL/CentOS 7
+-----------------
+
+  Note that there is a bug in CentOS 7, the same date version (1804, or 1810) ISO image must be used for both USB boot and Server Repository.
+
+  Note that this doesn't work, for some reason. Still trying to figure it out.
+
+  vmlinuz initrd=initrd.img inst.ks=192.168.1.200/ks/node_ks.cfg
+
+
+
+Further Reading
+===============
+
+https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/installation_guide/sect-kickstart-howto
+

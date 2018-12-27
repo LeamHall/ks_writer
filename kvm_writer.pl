@@ -34,8 +34,8 @@ while (<$CONFIG>) {
   next if ( $_ =~ m/\#/);
   chomp;
   next unless ( $_ );
-  my ($version, $network, $host_ip, $gateway, $hostname) = split(':'); 
- 
+  my ( $version, $network, $host_ip, $gateway, $hostname, $disktype ) = split(':'); 
+  next unless ( $disktype eq 'v' ); 
   open my $BASE_FILE, '<', "$input_dir/setup_new_virtual.sh" or die $!;
   my $kvm_string = do { local $/; <$BASE_FILE> };
   close $BASE_FILE;

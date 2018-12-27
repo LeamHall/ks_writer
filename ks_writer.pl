@@ -72,6 +72,8 @@ while (<CONFIG>) {
 
   $services       =~ s/DISKTYPE/$disktype/g;
   print $services;
+  
+  $partitions     =~ s/DISKTYPE/$disktype/g;
   print $partitions;
   print $packages;
   print $pre;
