@@ -33,7 +33,8 @@ open CONFIG,  '<', "$config" or die $!;
 while (<CONFIG>) {
   next if ( $_ =~ m/\#/);
   chomp;
-  my ($version, $network, $host_ip, $gateway, $hostname) = split(':'); 
+  next unless ( $_);
+  my ($version, $network, $host_ip, $gateway, $hostname, $disktype) = split(':'); 
   
   open INSTALL,  '<', "$input_dir/install_$version" or die $!;
   my $install  = do { local $/; <INSTALL>};
@@ -68,6 +69,8 @@ while (<CONFIG>) {
   $network_string =~ s/IP/$ip/;
   $network_string =~ s/HOSTNAME/$hostname/;
   print $network_string;
+
+  $services       =~ s/DISKTYPE/$disktype/g;
   print $services;
   print $partitions;
   print $packages;

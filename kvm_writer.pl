@@ -33,6 +33,7 @@ open my $CONFIG,  '<', "$config" or die $!;
 while (<$CONFIG>) {
   next if ( $_ =~ m/\#/);
   chomp;
+  next unless ( $_ );
   my ($version, $network, $host_ip, $gateway, $hostname) = split(':'); 
  
   open my $BASE_FILE, '<', "$input_dir/setup_new_virtual.sh" or die $!;

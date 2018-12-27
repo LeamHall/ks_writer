@@ -8,6 +8,6 @@ rpm
 yum
 unzip
 mlocate
-
+libselinux-python
 %end
 
