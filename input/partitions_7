@@ -1,14 +1,18 @@
+# partitions_7
+#
+# System bootloader configuration
+bootloader --append=" crashkernel=auto" --location=mbr --boot-drive=DISKTYPEdDISKLETTER
 
 # Partition clearing information
 # "sdb" is used when booting from a USB device.
 # "vda" is used for virtual disks.
-ignoredisk --only-use=DISKTYPEda
-clearpart --all --drives=DISKTYPEda --initlabel
+ignoredisk --only-use=DISKTYPEdDISKLETTER
+clearpart --all --drives=DISKTYPEdDISKLETTER --initlabel
 
-part pv.1404 --fstype="lvmpv" --ondisk=DISKTYPEda --size=2048
-part /boot --fstype="ext3" --ondisk=DISKTYPEda --size=2048
+part pv.1404 --fstype="lvmpv" --ondisk=DISKTYPEdDISKLETTER --size=2048
+part /boot --fstype="ext3" --ondisk=DISKTYPEdDISKLETTER --size=2048
 
-part pv.1088 --fstype="lvmpv" --ondisk=DISKTYPEda --size=10240
+part pv.1088 --fstype="lvmpv" --ondisk=DISKTYPEdDISKLETTER --size=10240
 volgroup root --pesize=4096 pv.1088
 logvol /  --fstype="ext4" --size=8192 --name=root --vgname=root
 logvol swap  --fstype="swap" --size=512 --name=swap --vgname=root

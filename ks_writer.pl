@@ -34,7 +34,8 @@ while (<CONFIG>) {
   next if ( $_ =~ m/\#/);
   chomp;
   next unless ( $_);
-  my ($version, $network, $host_ip, $gateway, $hostname, $disktype) = split(':'); 
+  my ($version, $network, $host_ip, $gateway, $hostname, $disktype, $diskletter) = split(':'); 
+  $diskletter = 'a' unless $diskletter;
   
   open INSTALL,  '<', "$input_dir/install_$version" or die $!;
   my $install  = do { local $/; <INSTALL>};
@@ -74,6 +75,7 @@ while (<CONFIG>) {
   print $services;
   
   $partitions     =~ s/DISKTYPE/$disktype/g;
+  $partitions     =~ s/DISKLETTER/$diskletter/g;
   print $partitions;
   print $packages;
   print $pre;

@@ -1,4 +1,5 @@
 # services_7
+#
 # Root password
 rootpw  --iscrypted $6$XweJyB1g$RHM7dwKPNfcd21tAy2TvXI.EDF/gh75/LNkhLFcxGEteFKg7r7ams7N/hxWlXEERzvH5jXt4gdiuSUBPDflxX/
 
@@ -12,5 +13,3 @@ user --groups=wheel --name=ansible --password=$6$7swkaSIV$5HGmYEz69H.Z8/JD0kM9iG
 # System timezone
 timezone America/New_York --isUtc
 
-# System bootloader configuration
-bootloader --append=" crashkernel=auto" --location=mbr --boot-drive=DISKTYPEda
