@@ -1,0 +1,21 @@
+SLES Builds
+===========
+
+"Tab" moves you around the menu.
+Use "Alt"+"n" to go to the next page.
+/sbin/ifconfig -a to get the IP address.
+In theory you can save the autoinst.xml file to rebuild easier.
+  Something to research.
+
+
+SLES 11
+-------
+Gives you the option to kill the firewall on install.
+
+
+
+SLES 12
+-------
+
+systemctl stop SuSEFirewall2_setup.service
+
