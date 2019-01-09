@@ -18,10 +18,9 @@ For RHEL/CentOS 7
 
   Note that there is a bug in CentOS 7, the same date version (1804, or 1810) ISO image must be used for both USB boot and Server Repository.
 
-  Note that this doesn't work, for some reason. Still trying to figure it out.
+  I'm told this could be shorter, but haven't yet proven that. This works.
 
-  vmlinuz initrd=initrd.img inst.ks=192.168.1.200/ks/node_ks.cfg
-
+  vmlinuz initrd=initrd.img inst.stage2=http://192.168.1.200/repo/centos/7/Server inst.repo=http://192.168.1.200/repo/centos/7/Server inst.ks=http://192.168.1.200/ks/josiah_ks.cfg
 
 
 Further Reading
