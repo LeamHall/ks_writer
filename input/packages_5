@@ -1,0 +1,12 @@
+
+## Packages
+
+%packages 
+@core
+openssh-clients
+openssh-server
+rpm
+yum
+unzip
+mlocate
+

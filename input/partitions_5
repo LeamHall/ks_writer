@@ -1,0 +1,16 @@
+# partitions_6
+
+# "sdb" is a localism, most places will use sda or vda
+bootloader --location=mbr --append="crashkernel=auto"
+clearpart --all --initlabel
+zerombr
+
+part /boot --fstype=ext3 --size=800 --asprimary --ondisk=DISKTYPEdDISKLETTER
+part pv.01 --grow --size=8000 --ondisk=DISKTYPEdDISKLETTER
+
+volgroup vg_root pv.01
+logvol / --name=lv_root --vgname=vg_root --fstype=ext3 --size=4096
+logvol /home --name=lv_home --vgname=vg_root --fstype=ext3 --size=500
+logvol /var --name=lv_var --vgname=vg_root --fstype=ext3 --size=2048
+logvol swap --name=lv_swap --vgname=vg_root --fstype=swap --size=500
+

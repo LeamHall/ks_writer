@@ -1,0 +1,7 @@
+# Install
+
+install
+url --url=http://192.168.1.200/repo/centos/5/Server/
+lang en_US.UTF-8
+keyboard us
+reboot
