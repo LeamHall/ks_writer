@@ -1,0 +1,2 @@
+#virt-install -n sles11_01 -r 2048 --vcpus=1 -v --network=bridge:br0   --disk path=/opt/virtuals/guests/sles11_01.img,size=15 --location /opt/iso/SLES-11-SP4-DVD-x86_64-GM-DVD1.iso --nographics --extra-args="console=tty0 console=ttyS0,115200n8" 
+virt-install --name sles11 --disk path=/opt/virtuals/guests/sles11.img,size=15 --vcpus=1 --ram=1024 --network bridge=br0 --nographics --location /opt/iso/SLES-11-SP4-DVD-x86_64-GM-DVD1.iso --extra-args="install=http://192.168.1.200/repo/sles/11 autoyast=http://192.168.1.200/ks/sles11_autoinst.xml console=tty0 console=ttyS0,115200n8"

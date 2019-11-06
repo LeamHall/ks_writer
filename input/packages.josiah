@@ -1,0 +1,23 @@
+## Packages
+
+%packages
+@base
+@core
+@basic-desktop
+@print-client
+@x11
+openssh
+openssh-clients
+openssh-server
+wget
+-yum-updateonboot
+-telnet-server
+-rsh-server
+-selinux
+-libselinux
+-libselinux-utils
+-libselinux-python
+-libselinux-devel
+-selinux-policy
+-selinux-policy-targeted
+%end

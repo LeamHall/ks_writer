@@ -1,0 +1,1 @@
+virt-install -n sles12 -r 1024 --vcpus=1 -v --network=bridge:br0 --disk path=/opt/virtuals/guests/sles12.img,size=15 --location /opt/iso/SLE-12-SP4-Server-DVD-x86_64-GM-DVD1.iso --nographics --extra-args="install=http://192.168.1.200/repo/sles/12 autoyast=http://192.168.1.200/ks/sles12_autoinst.xml console=tty0 console=ttyS0,115200n8" 
