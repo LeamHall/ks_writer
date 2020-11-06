@@ -1,0 +1,2 @@
+network  --bootproto=static --gateway=GATEWAY --ip=IP --nameserver=8.8.8.8 --netmask=255.255.255.0 --noipv6 --activate  --hostname=HOSTNAME
+

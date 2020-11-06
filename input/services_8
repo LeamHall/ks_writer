@@ -1,0 +1,18 @@
+repo --name="AppStream" --baseurl=file:///run/install/repo/AppStream
+
+# Root password
+rootpw --iscrypted $6$RPHbPbRxiWF13oAL$heyjI/hAExUTFd2MMN7jWUK7yLxNZ6aSh2Gj6m9XjzPXn0HPnvWAmZGsmi3gZ/08assyaOGVTiRwdBpMTjWaC/
+
+# Run the Setup Agent on first boot
+firstboot --enable
+
+# Do not configure the X Window System
+skipx
+
+# System services
+services --enabled="chronyd"
+
+# System timezone
+timezone America/New_York --isUtc
+user --groups=syseng,wheel --name=ansible --password=$6$Y1I6bYJ4vYDRbX60$EhnhevM8Bl/fETW4kG/IWaILSt0TskygQm2uWHgUCKVWGejpeD1angEtfKI4bSDTLfFWeJUNKfHjts.S8muj01 --iscrypted --gecos="ansible"
+

@@ -1,0 +1,16 @@
+#version=RHEL8
+ignoredisk --only-use=sda
+# System bootloader configuration
+bootloader --append=" crashkernel=auto" --location=mbr --boot-drive=sda
+autopart --type=thinp
+# Partition clearing information
+clearpart --all --initlabel --drives=sda
+# Use text mode install
+text
+# Use CDROM installation media
+cdrom
+# Keyboard layouts
+keyboard --vckeymap=us --xlayouts=''
+# System language
+lang en_US.UTF-8
+
