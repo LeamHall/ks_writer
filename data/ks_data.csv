@@ -1,4 +1,4 @@
-#Version:Network:host_ip:gateway:hostname:disktype(v=virt, s=phy)
+#Version:Network:host_ip:gateway:hostname:disktype(v=virt, s=phy):diskletter(usually a)
 6:192.168.1:20:1:web01:v
 6:192.168.1:21:1:web02:v
 7:192.168.1:22:1:web03:v
@@ -14,6 +14,8 @@
 7:192.168.1:52:1:laptopb:s:b
 7:192.168.1:53:1:laptopc:s:b
 7:192.168.1:55:1:shaphan:s:b
+7:192.168.1:80:1:jenkins_1:v
+7:192.168.1:83:1:monitor_1:v
 7:192.168.1:60:1:ansible:v
 7:192.168.1:200:1:psalms:s
 7:192.168.1:201:1:proverbs:s

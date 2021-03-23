@@ -2,7 +2,7 @@
 # System authorization information
 auth --enableshadow --passalgo=sha512
 
-url --url=http://192.168.1.200/repo/centos/7/Server/
+url --url=http://192.168.1.201/repo/centos/7/os/
 
 # Use text install
 text

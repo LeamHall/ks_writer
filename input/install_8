@@ -1,16 +1,27 @@
 #version=RHEL8
 ignoredisk --only-use=sda
-# System bootloader configuration
 bootloader --append=" crashkernel=auto" --location=mbr --boot-drive=sda
 autopart --type=thinp
-# Partition clearing information
 clearpart --all --initlabel --drives=sda
-# Use text mode install
+
+# System authorization information
+auth --enableshadow --passalgo=sha512
+
+url --url=http://192.168.1.201/repo/centos/8/os/
+
+# Use text install
 text
-# Use CDROM installation media
-cdrom
+
+# Reboot after install, disengage USB media.
+reboot --eject
+
+# Do not run the Setup Agent on first boot.
+# Agree to the eula.
+firstboot --disable
+eula --agreed
+
 # Keyboard layouts
-keyboard --vckeymap=us --xlayouts=''
+keyboard --vckeymap=us --xlayouts='us'
+
 # System language
 lang en_US.UTF-8
-

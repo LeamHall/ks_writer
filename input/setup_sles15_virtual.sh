@@ -1,0 +1,1 @@
+virt-install -n sles15 -r 1024 --vcpus=1 -v --network=bridge:br0 --disk path=/opt/virtuals/guests/sles15.img,size=15 --location /opt/iso/SLES_15.iso --nographics --extra-args="install=http://192.168.1.201/repo/sles/15 autoyast=http://192.168.1.201/ks/sles15_autoinst.xml console=tty0 console=ttyS0,115200n8" 
