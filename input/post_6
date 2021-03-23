@@ -2,7 +2,7 @@
 # post_6
 %post
 mkdir /home/ansible/.ssh
-wget http://192.168.1.200/ks/files/ansible_authorized_keys -O /home/ansible/.ssh/authorized_keys
+wget http://192.168.1.201/ks/files/ansible_authorized_keys -O /home/ansible/.ssh/authorized_keys
 chmod 600 /home/ansible/.ssh/authorized_keys
 chown -R ansible:ansible /home/ansible
 echo "ansible   ALL=(ALL)   ALL" >> /etc/sudoers.d/700_ansible
