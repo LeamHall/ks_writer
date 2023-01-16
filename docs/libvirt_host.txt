@@ -1,0 +1,29 @@
+Building and using a libvirt host
+
+
+Install the right packages
+  Void Linux:
+    libvirt
+    qemu
+    virtlogd
+    virtlockd
+
+If you are just getting started
+  Void Linux:
+    virt-manager
+
+
+Ensure the host has a virtual bridge, often virbr0
+
+Set the VMs to use the same lan as the virtual bridge
+  Either DHCP or static IP
+
+
+
+
+Bibliography
+
+  https://wiki.libvirt.org
+
+Networking
+  https://wiki.libvirt.org/page/VirtualNetworking

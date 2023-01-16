@@ -23,6 +23,15 @@ For RHEL/CentOS 7
   vmlinuz initrd=initrd.img inst.stage2=http://192.168.1.200/repo/centos/7/Server inst.repo=http://192.168.1.200/repo/centos/7/Server inst.ks=http://192.168.1.200/ks/josiah_ks.cfg
 
 
+For Fedora 37
+-------------
+
+  When the boot menu gives the install, trouble-shoot, etc, option, 
+  - Select "Install ..."
+  - Hit "e" for "edit"
+  - Change the "linux" line to the following
+    linux /images/pxeboot/vmlinuz inst.stage2=http://192.168.1.50/repo/f37 inst.repo=http://192.168.1.50/repo/f37 inst.ks=http://192.168.1.50/ks/f37_ks.cfg
+ 
 Further Reading
 ===============
 
